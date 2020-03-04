@@ -13,7 +13,7 @@ describe('CacheService', () => {
   describe('getMovieFromCache', () => {
     it('should the correct data if the id is found in cache', () => {
       expect(mockCacheService.getMovieFromCache('firstId')).toEqual({
-        firstId: { Title: 'Title 1' }
+        Title: 'Title 1'
       });
     });
     it('should return undefined if the id is not found in cache', () => {
