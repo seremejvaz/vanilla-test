@@ -21,7 +21,7 @@ class CacheService {
    */
   saveMovieOnCache(movieData) {
     if (!movieData || !movieData.imdbID) {
-      console.error('no ID found');
+      console.error('No ID found');
     }
     this.movieCache[movieData.imdbID] = movieData;
   }
