@@ -14,16 +14,16 @@ $dark-grey: #292f33;
 $light-grey: #66757f;
 
 /**
-     * Spacing
-     */
+   * Spacing
+   */
 
 $small: 10px;
 $medium: 15px;
 $large: 20px;
 
 /**
-     * Font-size
-     */
+   * Font-size
+   */
 
 $small-font: 10px;
 $medium-font: 12px;
@@ -31,8 +31,8 @@ $large-font: 14px;
 $xlarge-font: 18px;
 
 /**
-     * @mixin
-     */
+   * @mixin
+   */
 
 @mixin flexbox($direction) {
   display: flex;

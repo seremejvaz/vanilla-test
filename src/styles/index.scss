@@ -1,9 +1,13 @@
-// Components
-@import './theme';
-
-@import './MoviesDetail/index';
-
-#root {
-  width: 800px;
-  margin: 0 auto;
+// variable
+@import 'theme';
+// components
+@import 'components/MoviesDetail';
+@import 'components/MoviesGrid';
+@import 'components/Home';
+@import 'components/Search';
+html,
+body {
+  font-family: $font-family;
+  background-color: $main-color;
+  color: $dark-grey;
 }

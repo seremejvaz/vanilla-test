@@ -1,7 +1,7 @@
 import { generateMovieCard } from './movie-card';
 
 export const generateMovieGrid = movieList => {
-  const moviesGrid = document.getElementById('movies-grid');
+  const moviesGrid = document.getElementById('MoviesGrid');
   const newMovieGrid = document.createElement('div');
 
   movieList.map(result => {
