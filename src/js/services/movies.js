@@ -1,0 +1,83 @@
+import { cacheService } from './cache';
+import { apiService } from './api';
+import { generateMovieGrid } from '../components/movies-grid';
+import { generateNoresultsContent } from '../components/no-results';
+
+class MovieService {
+  constructor() {
+    this.activeTitleSorting = 1;
+  }
+  toggleSorting() {
+    this.activeTitleSorting = this.activeTitleSorting * -1;
+    this.showSortedMovieGrid(cacheService.getCurrentQueryCachedResults());
+  }
+
+  showSortedMovieGrid(movies) {
+    generateMovieGrid(
+      movies.sort((a, b) => {
+        if (a.Title < b.Title) {
+          return this.activeTitleSorting * -1;
+        }
+        if (a.Title > b.Title) {
+          return this.activeTitleSorting;
+        }
+        return 0;
+      })
+    );
+  }
+
+  /**
+   * Retrieves all the movies.
+   * 1 - Perform a querstring search by title to retrieve the list of movies
+   * 2 - Retrieve the complete movie details with search by IMDB Id
+   *   2.1 - Exclude the movies that we already have saved on cache
+   *   2.2 - Perform the GET by ID on the remaining movies
+   * 3 - Save the new retrieved details to cache by ID
+   * 4 - Call the generateMovieGrid with the list that we retrieve from the cache
+   *     (using the ones we already have and the new ones that we just saved there)
+   * @param {string} searchString
+   */
+  getMovies(searchString) {
+    apiService.getMovies(searchString).then(
+      d => {
+        const res = d.data.Search;
+        if (res && res.length > 0) {
+          apiService
+            .getMoviesWithDetails(
+              res
+                // We exclude the movies we already have on cache
+                .filter(
+                  result => !cacheService.getMovieFromCache(result.imdbID)
+                )
+                // And then we retrieve only the IDs of those to make the detail request
+                .map(r => apiService.getMovieDetails(r.imdbID))
+            )
+            .then(detailsList => {
+              // We save on cache the result of the new movies
+              detailsList.map(movieDetail => {
+                cacheService.saveMovieOnCache(movieDetail.data);
+              });
+
+              cacheService.saveCurrentQueryCachedResults(
+                cacheService.getMovieListFromCache(
+                  res.map(result => result.imdbID)
+                )
+              );
+
+              this.showSortedMovieGrid(
+                cacheService.getCurrentQueryCachedResults()
+              );
+            });
+        } else {
+          // If there are not results
+          generateNoresultsContent();
+        }
+      },
+      e => {
+        // We show a toast if there's some error on the server request
+        showErrorToast(e);
+      }
+    );
+  }
+}
+export const movieService = new MovieService();

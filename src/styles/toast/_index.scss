@@ -1,0 +1,12 @@
+%toast-base {
+  border-radius: 4px;
+  position: absolute;
+  right: $spacing;
+  bottom: $spacing;
+  padding: $spacing;
+}
+#toast-error {
+  @extend %toast-base;
+  background-color: $color-error;
+  color: white;
+}
