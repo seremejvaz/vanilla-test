@@ -13,17 +13,19 @@ class MovieService {
   }
 
   showSortedMovieGrid(movies) {
-    generateMovieGrid(
-      movies.sort((a, b) => {
-        if (a.Title < b.Title) {
-          return this.activeTitleSorting * -1;
-        }
-        if (a.Title > b.Title) {
-          return this.activeTitleSorting;
-        }
-        return 0;
-      })
-    );
+    if (movies && movies.length > 0) {
+      generateMovieGrid(
+        movies.sort((a, b) => {
+          if (a.Title < b.Title) {
+            return this.activeTitleSorting * -1;
+          }
+          if (a.Title > b.Title) {
+            return this.activeTitleSorting;
+          }
+          return 0;
+        })
+      );
+    }
   }
 
   /**

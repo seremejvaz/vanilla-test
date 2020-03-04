@@ -35,8 +35,6 @@ const generateMovieRating = rating => {
 };
 
 export const generateMovieCard = movie => {
-  console.log(movie);
-
   const movieCard = document.createElement('a');
   movieCard.href = `http://imdb.com/title/${movie.imdbID}`;
   movieCard.classList.add('movie-card');
