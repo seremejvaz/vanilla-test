@@ -23,7 +23,7 @@ class CacheService {
     if (!movieData || !movieData.imdbID) {
       console.error('no ID found');
     }
-    return (this.movieCache[movieData.imdbID] = movieData);
+    this.movieCache[movieData.imdbID] = movieData;
   }
 
   /**
