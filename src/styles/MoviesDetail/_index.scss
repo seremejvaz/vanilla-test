@@ -1,0 +1,74 @@
+@import 'theme';
+
+.MoviesDetail {
+  @include flexbox(row);
+  width: 450px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
+  background-color: $white;
+  margin: $medium;
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.MoviesDetail-blockLeft {
+  flex: 1;
+  @include flexbox(column);
+  justify-content: center;
+}
+
+.MoviesDetail-blockRight {
+  flex: 1;
+  @include flexbox(column);
+  padding: $medium;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  justify-content: space-around;
+}
+
+.MoviesDetail-img {
+  width: 100%;
+}
+
+.MoviesDetail-header {
+  @include flexbox(column);
+}
+
+.MoviesDetail-title {
+  font-size: $xlarge-font;
+  margin: 0;
+  text-transform: uppercase;
+}
+.MoviesDetail-description {
+  font-size: $small-font;
+  word-wrap: break-word;
+  color: $light-grey;
+}
+
+.MoviesDetail-subBlock {
+  @include flexbox(row);
+  justify-content: space-between;
+}
+
+.MoviesDetail-punctuation {
+  @include flexbox(column);
+  flex: 1;
+  align-items: center;
+}
+
+.MoviesDetail-item.punctuation {
+  font-size: $small-font;
+  color: $light-grey;
+  margin-top: auto;
+  text-align: center;
+}
+
+.MoviesDetail-punctuation.icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.MoviesDetail-item {
+  font-size: $small-font;
+  color: $light-grey;
+}

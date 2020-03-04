@@ -1,54 +1,44 @@
-const generateMovieTitle = title => {
-  const el = document.createElement('h1');
-  el.innerText = title;
-  return el;
-};
-
-const generateMovieYear = year => {
-  const el = document.createElement('span');
-  el.innerText = year;
-  return el;
-};
-
-const generateMoviePoster = poster => {
-  const el = document.createElement('img');
-  el.src = poster;
-  return el;
-};
-
-const generateMovieDescription = description => {
-  const el = document.createElement('p');
-  el.innerText = description;
-  return el;
-};
-
-const generateMovieRating = rating => {
-  const el = document.createElement('p');
-  const title = document.createElement('strong');
-  title.innerHTML = rating.Source;
-  const value = document.createElement('span');
-  value.innerHTML = rating.Value;
-
-  el.append(title);
-  el.append(value);
-  return el;
-};
-
+/**
+ *
+ * @param {*} movie
+ */
 export const generateMovieCard = movie => {
-  const movieCard = document.createElement('a');
-  movieCard.href = `http://imdb.com/title/${movie.imdbID}`;
-  movieCard.classList.add('movie-card');
+  const el = document.createElement('div');
+  const html = `
+  <a class="MoviesDetail" href="https://www.imdb.com/title/${movie.imdbID}/">
+  <div class="MoviesDetail-blockLeft">
+    <img
+      class="MoviesDetail-img"
+      src="${movie.Poster}"
+    />
+  </div>
+  <div class="MoviesDetail-blockRight">
+    <div class="MoviesDetail-header">
+      <p class="MoviesDetail-title">${movie.Title}</p>
+      <p class="MoviesDetail-item">${movie.Year}</p>
+    </div>
+    <div class="MoviesDetail-subBlock">
+      <p class="MoviesDetail-item">${movie.Genre}</p>
+      <p class="MoviesDetail-item">${movie.Runtime}</p>
+    </div>
+    <p class="MoviesDetail-description">
+     ${movie.Plot}
+    </p>
+    <div class="MoviesDetail-subBlock">
+    ${movie.Ratings.map(r => {
+      return `<div class="MoviesDetail-punctuation">
+      <img
+        class="MoviesDetail-punctuation icon"
+        src="https://cdn.icon-icons.com/icons2/564/PNG/512/IMDb_icon-icons.com_54172.png"
+      />
+      <p class="MoviesDetail-item punctuation">${r.Value}</p>
+    </div>`;
+    })}
+    </div>
+  </div>
+</a>
+  `;
 
-  movieCard.append(generateMovieTitle(movie.Title));
-  movieCard.append(generateMovieYear(movie.Year));
-  movieCard.append(generateMoviePoster(movie.Poster));
-  movieCard.append(generateMovieDescription(movie.Plot));
-  /**
-   * Ratings are returned as [{Source: string, Value: string}...]
-   */
-  movie.Ratings.map(rating => {
-    movieCard.append(generateMovieRating(rating));
-  });
-
-  return movieCard;
+  el.innerHTML = html;
+  return el;
 };

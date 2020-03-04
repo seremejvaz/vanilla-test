@@ -1,11 +1,9 @@
-// Variables & utils
-@import 'variables';
-
 // Components
-@import 'toast/index';
-@import 'search-input/index';
+@import './theme';
+
+@import './MoviesDetail/index';
 
 #root {
-    width: 800px;
-    margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
 }

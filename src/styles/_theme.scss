@@ -1,0 +1,41 @@
+/**
+ * Theme definition
+ *
+ * This defines the theme in fundamental terms
+*/
+
+/**
+  * Colors
+  */
+
+$main-color: #09f;
+$white: #fff;
+$dark-grey: #292f33;
+$light-grey: #66757f;
+
+/**
+     * Spacing
+     */
+
+$small: 10px;
+$medium: 15px;
+$large: 20px;
+
+/**
+     * Font-size
+     */
+
+$small-font: 10px;
+$medium-font: 12px;
+$large-font: 14px;
+$xlarge-font: 18px;
+
+/**
+     * @mixin
+     */
+
+@mixin flexbox($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+$font-family: 'Spartan';
