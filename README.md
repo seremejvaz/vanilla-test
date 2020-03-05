@@ -36,7 +36,7 @@ The app is split in 3 main parts.
   item, and save them in cache. After that, it gets the data saved
   in cache and sort it by title.
 - Demo API calls:
-  ![getDetailsVideo](./src/assets/getDetails-video.mov)
+  ![getDetailsVideo](./src/assets/getDetails-video.gif)
 
 ## Test
 
