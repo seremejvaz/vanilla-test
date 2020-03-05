@@ -1,14 +1,31 @@
-import { NON_AVAILABLE_KEY } from '../constant.js';
+import {
+  NON_AVAILABLE_KEY,
+  IMDb,
+  ROTTEN_TOMATOES,
+  METACRITIC
+} from '../constant.js';
 
 const checkMovieDataAvailable = data => {
   return data === NON_AVAILABLE_KEY ? '' : data;
+};
+
+const getRatingsIcons = rating => {
+  switch (rating) {
+    case 'Internet Movie Database':
+      return IMDb;
+    case 'Rotten Tomatoes':
+      return ROTTEN_TOMATOES;
+    case 'Metacritic':
+      return METACRITIC;
+    default:
+      return '';
+  }
 };
 /**
  *
  * @param {*} movie
  */
 export const generateMovieCard = movie => {
-  console.log(movie);
   const el = document.createElement('div');
   const html = `
   <a class="MoviesDetail" href="https://www.imdb.com/title/${movie.imdbID}/">
@@ -36,6 +53,7 @@ export const generateMovieCard = movie => {
     </p>
     <div class="MoviesDetail-subBlock">
     ${movie.Ratings.map(r => {
+      console.log(r);
       return `<div class="MoviesDetail-punctuation">
       <img
         class="MoviesDetail-punctuation icon"

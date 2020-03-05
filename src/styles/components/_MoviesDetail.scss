@@ -38,12 +38,12 @@
 }
 
 .MoviesDetail-title {
-  font-size: $xlarge-font;
+  font-size: $font-size-xl;
   margin: 0;
   text-transform: uppercase;
 }
 .MoviesDetail-description {
-  font-size: $small-font;
+  font-size: $font-size-s;
   word-wrap: break-word;
   color: $light-grey;
 }
@@ -60,7 +60,7 @@
 }
 
 .MoviesDetail-item.punctuation {
-  font-size: $small-font;
+  font-size: $font-size-s;
   color: $light-grey;
   margin-top: auto;
   text-align: center;
@@ -72,6 +72,6 @@
 }
 
 .MoviesDetail-item {
-  font-size: $small-font;
+  font-size: $font-size-s;
   color: $light-grey;
 }
