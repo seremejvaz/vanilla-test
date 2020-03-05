@@ -52,16 +52,16 @@ export const generateMovieCard = movie => {
      ${checkMovieDataAvailable(movie.Plot)}
     </p>
     <div class="MoviesDetail-subBlock">
-    ${movie.Ratings.map(r => {
-      console.log(r);
-      return `<div class="MoviesDetail-punctuation">
+    ${movie.Ratings.map(
+      r =>
+        `<div class="MoviesDetail-punctuation">
       <img
         class="MoviesDetail-punctuation icon"
         src=${getRatingsIcons(r.Source)}
       />
       <p class="MoviesDetail-item punctuation">${r.Value}</p>
-    </div>`;
-    }).join(' ')}
+    </div>`
+    ).join(' ')}
     </div>
   </div>
 </a>

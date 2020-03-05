@@ -1,8 +1,9 @@
 // Import styles
 import './styles/index.scss';
+import { App } from './js/App';
 
-// Import JS Components
-import './js/components/search-input';
+// Init App
+App.init();
 
 // Main mount
 export const root = document.getElementById('root');
