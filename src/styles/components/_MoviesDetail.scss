@@ -6,7 +6,7 @@
   border-radius: 2px;
   box-shadow: 0px 0px 10px 2px $shadow-color;
   background-color: $white;
-  margin: $medium;
+  margin: $spacing-m;
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
   transition: transform 0.5s;
@@ -24,7 +24,7 @@
 .MoviesDetail-blockRight {
   flex: 1;
   @include flexbox(column);
-  padding: $medium;
+  padding: $spacing-m;
   border-left: 1px solid $shadow-color;
   justify-content: space-around;
 }
@@ -67,7 +67,7 @@
 }
 
 .MoviesDetail-punctuation.icon {
-  @include square(30px);
+  @include square($spacing-xl);
   margin-bottom: 5px;
 }
 
