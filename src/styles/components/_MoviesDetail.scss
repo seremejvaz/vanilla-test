@@ -29,8 +29,11 @@
   justify-content: space-around;
 }
 
-.MoviesDetail-img {
-  width: 100%;
+.MoviesDetail-img--container {
+  width: 209px;
+  height: 310px;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 .MoviesDetail-header {
@@ -55,7 +58,6 @@
 
 .MoviesDetail-punctuation {
   @include flexbox(column);
-  flex: 2;
   align-items: center;
 }
 

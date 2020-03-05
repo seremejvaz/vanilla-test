@@ -32,11 +32,11 @@ export const generateMovieCard = movie => {
   <div class="MoviesDetail-blockLeft">
     ${
       movie.Poster === 'N/A'
-        ? `<img
-          class="MoviesDetail-img"
-          src="https://image.shutterstock.com/image-vector/no-image-available-icon-vector-600w-1323742826.jpg"
+        ? `<div
+          class="MoviesDetail-img--container"
+          style="background-image: url('https://image.shutterstock.com/image-vector/no-image-available-icon-vector-600w-1323742826.jpg')"
         />`
-        : `<img class="MoviesDetail-img" src="${movie.Poster}" />`
+        : `<div class="MoviesDetail-img--container" style="background-image: url(${movie.Poster})"  />`
     }
   </div>
   <div class="MoviesDetail-blockRight">
@@ -57,7 +57,7 @@ export const generateMovieCard = movie => {
       return `<div class="MoviesDetail-punctuation">
       <img
         class="MoviesDetail-punctuation icon"
-        src="https://cdn.icon-icons.com/icons2/564/PNG/512/IMDb_icon-icons.com_54172.png"
+        src=${getRatingsIcons(r.Source)}
       />
       <p class="MoviesDetail-item punctuation">${r.Value}</p>
     </div>`;
