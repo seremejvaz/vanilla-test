@@ -67,8 +67,7 @@
 }
 
 .MoviesDetail-punctuation.icon {
-  width: 30px;
-  height: 30px;
+  @include square(30px);
   margin-bottom: 5px;
 }
 

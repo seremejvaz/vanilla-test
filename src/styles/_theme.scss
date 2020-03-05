@@ -39,4 +39,9 @@ $xlarge-font: 18px;
   display: flex;
   flex-direction: $direction;
 }
+@mixin square($size) {
+   width: $size;
+   height: $size;
+}
+
 $font-family: 'Spartan';
