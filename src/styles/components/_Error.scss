@@ -1,0 +1,10 @@
+.ToastError {
+  background-color: $error-color;
+  color: $white;
+  font-size: $font-size-xl;
+  width: fit-content;
+  padding: $spacing-m;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+}

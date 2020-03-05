@@ -4,6 +4,7 @@ import { generateMovieGrid } from '../components/MoviesGrid';
 import { generateNoresultsContent } from '../components/NoResults';
 import { renderSortingButton } from '../components/SortingButton';
 import { showSpinner, hideSpinner } from '../components/Spinner';
+import { showErrorToast } from '../components/Error';
 class MovieService {
   constructor() {
     this.activeTitleSorting = 1;
@@ -33,7 +34,7 @@ class MovieService {
 
   /**
    * Retrieves all the movies.
-   * 1 - Perform a querstring search by title to retrieve the list of movies
+   * 1 - Perform a querystring search by title to retrieve the list of movies
    * 2 - Retrieve the complete movie details with search by IMDB Id
    *   2.1 - Exclude the movies that we already have saved on cache
    *   2.2 - Perform the GET by ID on the remaining movies
@@ -83,6 +84,7 @@ class MovieService {
       },
       e => {
         // We show a toast if there's some error on the server request
+        hideSpinner();
         showErrorToast(e);
       }
     );
