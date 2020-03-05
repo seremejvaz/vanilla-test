@@ -1,8 +1,6 @@
-import NON_AVAILABLE_KEY from '../constant';
+import { NON_AVAILABLE_KEY } from '../constant.js';
 
 const checkMovieDataAvailable = data => {
-  console.log(data);
-
   return data === NON_AVAILABLE_KEY ? '' : data;
 };
 /**
@@ -10,6 +8,7 @@ const checkMovieDataAvailable = data => {
  * @param {*} movie
  */
 export const generateMovieCard = movie => {
+  console.log(movie);
   const el = document.createElement('div');
   const html = `
   <a class="MoviesDetail" href="https://www.imdb.com/title/${movie.imdbID}/">
