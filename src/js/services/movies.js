@@ -11,8 +11,6 @@ class MovieService {
   toggleSorting() {
     this.activeTitleSorting = this.activeTitleSorting * -1;
     this.showSortedMovieGrid(cacheService.getCurrentQueryCachedResults());
-    console.log(this.activeTitleSorting);
-
     renderSortingButton(this.activeTitleSorting);
   }
 
