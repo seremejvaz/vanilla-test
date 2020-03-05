@@ -5,6 +5,11 @@
 */
 
 /**
+  * Font-family
+  */
+$font-family: 'Spartan';
+
+/**
   * Colors
   */
 
@@ -46,4 +51,8 @@ $font-size-xxl: 36px;
   height: $size;
 }
 
-$font-family: 'Spartan';
+@mixin phone {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}

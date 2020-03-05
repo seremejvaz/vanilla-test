@@ -5,8 +5,11 @@
 }
 
 .no-results.img {
-  width: 600px;
+  width: 50vw;
   margin: $spacing-m;
+  @include phone() {
+    width: 75vw;
+  }
 }
 
 .no-results.text {

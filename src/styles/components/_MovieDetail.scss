@@ -13,6 +13,10 @@
   &:hover {
     transform: scale(1.05);
   }
+  @include phone() {
+    width: 95vw;
+    @include flexbox(column);
+  }
 }
 
 .MovieDetail-blockLeft {
@@ -34,6 +38,9 @@
   height: 310px;
   background-size: cover;
   background-position: 50% 50%;
+  @include phone() {
+    width: 100%;
+  }
 }
 
 .MovieDetail-header {
