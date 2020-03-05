@@ -53,7 +53,7 @@
 
 .MoviesDetail-subBlock {
   @include flexbox(row);
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .MoviesDetail-punctuation {

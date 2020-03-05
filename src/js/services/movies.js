@@ -75,6 +75,8 @@ class MovieService {
               );
             });
         } else {
+          hideSpinner();
+
           // If there are not results
           generateNoresultsContent();
         }
