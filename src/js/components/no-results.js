@@ -1,4 +1,4 @@
-import { moviesGrid } from '../..';
+import { moviesGrid } from '../../index';
 
 export const generateNoresultsContent = () => {
   if (!document.getElementsByClassName('no-result').length) {

@@ -1,12 +1,15 @@
-const showMovieTitle = title => {
-  return title === 'N/A' ? 'whatever' : title;
+import NON_AVAILABLE_KEY from '../constant';
+
+const checkMovieDataAvailable = data => {
+  console.log(data);
+
+  return data === NON_AVAILABLE_KEY ? '' : data;
 };
 /**
  *
  * @param {*} movie
  */
 export const generateMovieCard = movie => {
-  console.log(!!movie.Plot);
   const el = document.createElement('div');
   const html = `
   <a class="MoviesDetail" href="https://www.imdb.com/title/${movie.imdbID}/">
@@ -22,15 +25,15 @@ export const generateMovieCard = movie => {
   </div>
   <div class="MoviesDetail-blockRight">
     <div class="MoviesDetail-header">
-      <p class="MoviesDetail-title">${showMovieTitle(movie.Title)}</p>
-      <p class="MoviesDetail-item">${movie.Year}</p>
+      <p class="MoviesDetail-title">${checkMovieDataAvailable(movie.Title)}</p>
+      <p class="MoviesDetail-item">${checkMovieDataAvailable(movie.Year)}</p>
     </div>
     <div class="MoviesDetail-subBlock">
-      <p class="MoviesDetail-item">${movie.Genre}</p>
-      <p class="MoviesDetail-item">${movie.Runtime}</p>
+      <p class="MoviesDetail-item">${checkMovieDataAvailable(movie.Genre)}</p>
+      <p class="MoviesDetail-item">${checkMovieDataAvailable(movie.Runtime)}</p>
     </div>
     <p class="MoviesDetail-description">
-     ${movie.Plot}
+     ${checkMovieDataAvailable(movie.Plot)}
     </p>
     <div class="MoviesDetail-subBlock">
     ${movie.Ratings.map(r => {

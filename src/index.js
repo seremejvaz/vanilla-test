@@ -6,4 +6,4 @@ import './js/components/search-input';
 
 // Main mount
 export const root = document.getElementById('root');
-export const moviesGrid = document.getElementById('movies-grid');
+export const moviesGrid = document.getElementById('MoviesGrid');
