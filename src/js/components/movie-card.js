@@ -33,7 +33,7 @@ export const generateMovieCard = movie => {
       />
       <p class="MoviesDetail-item punctuation">${r.Value}</p>
     </div>`;
-    })}
+    }).join(' ')}
     </div>
   </div>
 </a>
