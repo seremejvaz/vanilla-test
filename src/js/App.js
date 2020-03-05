@@ -1,4 +1,4 @@
-import { initSearchInput } from './components/search-input';
+import { initSearchInput } from './components/Search';
 
 export const root = document.getElementById('root');
 export const moviesGrid = document.getElementById('MoviesGrid');

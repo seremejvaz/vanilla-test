@@ -1,6 +1,6 @@
 @import 'theme';
 
-.MoviesDetail {
+.MovieDetail {
   @include flexbox(row);
   width: 450px;
   border-radius: 2px;
@@ -15,13 +15,13 @@
   }
 }
 
-.MoviesDetail-blockLeft {
+.MovieDetail-blockLeft {
   flex: 1;
   @include flexbox(column);
   justify-content: center;
 }
 
-.MoviesDetail-blockRight {
+.MovieDetail-blockRight {
   flex: 1;
   @include flexbox(column);
   padding: $spacing-m;
@@ -29,51 +29,56 @@
   justify-content: space-around;
 }
 
-.MoviesDetail-img--container {
+.MovieDetail-img--container {
   width: 209px;
   height: 310px;
   background-size: cover;
   background-position: 50% 50%;
 }
 
-.MoviesDetail-header {
+.MovieDetail-header {
   @include flexbox(column);
 }
 
-.MoviesDetail-title {
+.MovieDetail-title {
   font-size: $font-size-xl;
   margin: 0;
   text-transform: uppercase;
 }
-.MoviesDetail-description {
+.MovieDetail-description {
   font-size: $font-size-s;
   word-wrap: break-word;
-  color: $light-grey;
+  color: $text-color;
 }
 
-.MoviesDetail-subBlock {
+.MovieDetail-subBlock {
+  @include flexbox(row);
+  justify-content: space-between;
+}
+
+.MovieDetail-bottom-subBlock {
   @include flexbox(row);
   justify-content: space-evenly;
 }
 
-.MoviesDetail-punctuation {
+.MovieDetail-punctuation {
   @include flexbox(column);
   align-items: center;
 }
 
-.MoviesDetail-item.punctuation {
+.MovieDetail-item.punctuation {
   font-size: $font-size-s;
-  color: $light-grey;
+  color: $text-color;
   margin-top: auto;
   text-align: center;
 }
 
-.MoviesDetail-punctuation.icon {
+.MovieDetail-punctuation.icon {
   @include square($spacing-xl);
   margin-bottom: 5px;
 }
 
-.MoviesDetail-item {
+.MovieDetail-item {
   font-size: $font-size-s;
-  color: $light-grey;
+  color: $text-color;
 }

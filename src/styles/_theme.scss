@@ -10,8 +10,8 @@
 
 $main-color: #09f;
 $white: #fff;
-$dark-grey: #292f33;
-$light-grey: #66757f;
+$titles-color: #292f33;
+$text-color: #66757f;
 $shadow-color: rgba(0, 0, 0, 0.15);
 
 /**
@@ -42,8 +42,8 @@ $font-size-xxl: 36px;
   flex-direction: $direction;
 }
 @mixin square($size) {
-   width: $size;
-   height: $size;
+  width: $size;
+  height: $size;
 }
 
 $font-family: 'Spartan';

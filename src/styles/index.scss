@@ -1,7 +1,7 @@
 // variable
 @import 'theme';
 // components
-@import 'components/MoviesDetail';
+@import 'components/MovieDetail';
 @import 'components/MoviesGrid';
 @import 'components/Home';
 @import 'components/Search';
@@ -10,5 +10,5 @@ html,
 body {
   font-family: $font-family;
   background-color: $main-color;
-  color: $dark-grey;
+  color: $titles-color;
 }

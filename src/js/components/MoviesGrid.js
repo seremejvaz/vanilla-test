@@ -1,4 +1,4 @@
-import { generateMovieCard } from './movie-card';
+import { generateMovieCard } from './MovieDetail';
 
 export const generateMovieGrid = movieList => {
   const moviesGrid = document.getElementById('MoviesGrid');

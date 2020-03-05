@@ -1,5 +1,5 @@
 import { movieService } from '../services/movies';
-import './sorting-button';
+import './SortingButton';
 
 export const initSearchInput = () => {
   const searchInput = document.getElementById('Search-input');

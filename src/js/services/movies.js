@@ -1,9 +1,9 @@
 import { cacheService } from './cache';
 import { apiService } from './api';
-import { generateMovieGrid } from '../components/movies-grid';
-import { generateNoresultsContent } from '../components/no-results';
-import { renderSortingButton } from '../components/sorting-button';
-import { showSpinner, hideSpinner } from '../components/spinner';
+import { generateMovieGrid } from '../components/MoviesGrid';
+import { generateNoresultsContent } from '../components/NoResults';
+import { renderSortingButton } from '../components/SortingButton';
+import { showSpinner, hideSpinner } from '../components/Spinner';
 class MovieService {
   constructor() {
     this.activeTitleSorting = 1;
