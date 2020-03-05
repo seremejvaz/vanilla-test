@@ -1,10 +1,10 @@
-.no-results {
+.NoResults {
   @include flexbox(column);
   align-items: center;
   width: 100%;
 }
 
-.no-results.img {
+.NoResults.img {
   width: 50vw;
   margin: $spacing-m;
   @include phone() {
@@ -12,7 +12,7 @@
   }
 }
 
-.no-results.text {
+.NoResults.text {
   font-size: $font-size-xxl;
   color: $white;
   font-weight: 700;
