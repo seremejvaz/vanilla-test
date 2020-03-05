@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adevinta Vanilla</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Spartan:400,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root">
+      <div class="Home">
+        <div class="Search">
+          <input
+            id="Search-input"
+            class="Search-input"
+            placeholder="Search a movie!"
+          />
+          <div id="Search-spinner" class="Search-spinner"></div>
+          <div id="Search-button" class="Search-button">
+            <i class="material-icons md-light">
+              keyboard_arrow_down
+            </i>
+          </div>
+        </div>
+        <div id="MoviesGrid" class="MoviesGrid"></div>
+      </div>
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
