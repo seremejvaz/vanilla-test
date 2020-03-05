@@ -2,6 +2,7 @@ import { cacheService } from './cache';
 import { apiService } from './api';
 import { generateMovieGrid } from '../components/movies-grid';
 import { generateNoresultsContent } from '../components/no-results';
+import { renderSortingButton } from '../components/sorting-button';
 
 class MovieService {
   constructor() {
@@ -10,6 +11,9 @@ class MovieService {
   toggleSorting() {
     this.activeTitleSorting = this.activeTitleSorting * -1;
     this.showSortedMovieGrid(cacheService.getCurrentQueryCachedResults());
+    console.log(this.activeTitleSorting);
+
+    renderSortingButton(this.activeTitleSorting);
   }
 
   showSortedMovieGrid(movies) {

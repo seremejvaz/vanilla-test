@@ -1,4 +1,4 @@
-@import "theme";
+@import 'theme';
 
 .MoviesDetail {
   @include flexbox(row);
@@ -51,7 +51,7 @@
 
 .MoviesDetail-punctuation {
   @include flexbox(column);
-  flex: 1;
+  flex: 1.5;
   align-items: center;
 }
 
