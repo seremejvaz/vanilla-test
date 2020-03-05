@@ -1,0 +1,16 @@
+.no-results {
+  @include flexbox(column);
+  align-items: center;
+  width: 100%;
+}
+
+.no-results.img {
+  width: 600px;
+  margin: $spacing-m;
+}
+
+.no-results.text {
+  font-size: $font-size-xxl;
+  color: $white;
+  font-weight: 700;
+}

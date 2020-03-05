@@ -3,7 +3,7 @@ import { apiService } from './api';
 import { generateMovieGrid } from '../components/movies-grid';
 import { generateNoresultsContent } from '../components/no-results';
 import { renderSortingButton } from '../components/sorting-button';
-
+import { showSpinner, hideSpinner } from '../components/spinner';
 class MovieService {
   constructor() {
     this.activeTitleSorting = 1;
@@ -25,6 +25,7 @@ class MovieService {
   }
 
   showSortedMovieGrid(movies) {
+    hideSpinner();
     if (movies && movies.length > 0) {
       generateMovieGrid(movies.sort((a, b) => this.sortMovies(a, b)));
     }
@@ -42,6 +43,7 @@ class MovieService {
    * @param {string} searchString
    */
   getMovies(searchString) {
+    showSpinner();
     apiService.getMovies(searchString).then(
       d => {
         const res = d.data.Search;

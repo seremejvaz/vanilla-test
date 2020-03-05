@@ -1,6 +1,7 @@
 .Search {
   @include flexbox(row);
   align-items: center;
+  position: relative;
 }
 
 .Search-input {
@@ -24,4 +25,11 @@ input::placeholder {
   color: $white;
   margin: 0 10px;
   cursor: pointer;
+}
+
+.Search-spinner.image {
+  @include square(30px);
+  bottom: 30px;
+  position: absolute;
+  right: 110px;
 }
