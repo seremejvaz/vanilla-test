@@ -1,5 +1,15 @@
 import spinnerGif from '../../assets/spinner.gif';
 
+const getSpinner = isHidden => {
+  const hiddenClass = isHidden ? ' hidden' : '';
+  return `
+ <img
+     class="Search-spinner image${hiddenClass}"
+     src="https://raw.githubusercontent.com/seremejvaz/vanilla-test/master/src/assets/spinner.gif"
+ />
+ `;
+};
+
 export const showSpinner = () => {
   const searchSpinner = document.getElementById('Search-spinner');
   const spinner = document.createElement('div');
@@ -9,17 +19,14 @@ export const showSpinner = () => {
   // (even thought the build seems to copy the asset with the correct name).
   // I didn't want to spend much time in the deploy so I used the direct raw
   // url from Github.
-  const html = `
-    <img
-        class="Search-spinner image"
-        src="https://github.com/seremejvaz/vanilla-test/raw/master/src/assets/spinner.gif"
-    />
-    `;
-  spinner.innerHTML = html;
-  searchSpinner.append(spinner);
+  spinner.innerHTML = getSpinner();
+  searchSpinner.innerHTML = spinner.outerHTML;
 };
 
 export const hideSpinner = () => {
   const searchSpinner = document.getElementById('Search-spinner');
-  searchSpinner.innerHTML = '';
+  const spinner = document.createElement('div');
+  spinner.classList.add('Search-spinner');
+  spinner.innerHTML = getSpinner(true);
+  searchSpinner.innerHTML = spinner.outerHTML;
 };
