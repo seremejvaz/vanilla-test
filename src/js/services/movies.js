@@ -79,6 +79,7 @@ class MovieService {
           hideSpinner();
 
           // If there are not results
+          cacheService.saveCurrentQueryCachedResults('');
           generateNoresultsContent();
         }
       },
