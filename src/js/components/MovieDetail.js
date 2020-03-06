@@ -28,7 +28,9 @@ const getRatingsIcons = rating => {
 export const generateMovieCard = movie => {
   const el = document.createElement('div');
   const html = `
-  <a class="MovieDetail" href="https://www.imdb.com/title/${movie.imdbID}/">
+  <a class="MovieDetail" href="https://www.imdb.com/title/${
+    movie.imdbID
+  }/" target="_blank">
     <div class="MovieDetail-blockLeft">
       ${
         movie.Poster === 'N/A'
