@@ -24,7 +24,9 @@ The app is split in 3 main parts.
 ## Optimization method
 
 - **Get details method:**
+
   ![getDetails](./src/assets/getDetails-image.png)
+
   The method getDetails is responsible to make call some methods in
   order to call the API, save data in cache and get the data. First
   of all, the method call the apiService with Axios library. The
@@ -35,7 +37,9 @@ The app is split in 3 main parts.
    Then the app call the apiService to get more details of every
   item, and save them in cache. After that, it gets the data saved
   in cache and sort it by title.
+
 - Demo API calls:
+
   ![getDetailsVideo](./src/assets/getDetails-video.gif)
 
 ## Test
